@@ -53,4 +53,4 @@ class Login extends CI_Controller {
     }
 }
 
-/* End of file Controllername.php */
+/* End of file Login.php */
