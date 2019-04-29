@@ -3,12 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <!DOCTYPE html>
 <html>
-    <?php
-    if (isset($this->session->userdata['logged_in'])) {
-
-    header("location: http://localhost/egrop2/User_Auth");
-    }
-    ?>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -44,21 +38,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <!-- /.login-logo -->
   <div class="login-box-body">
     <p class="login-box-msg">Sign in to start your session</p>
-    <form role="form" action="<?php base_url() ?>User_Auth/user_login_process" method="POST">
+    <?php if(isset($error)) {echo $error; }; ?>
+    <form action="<?php echo base_url() ?>login" method="POST">
       <div class="form-group has-feedback">
-        <input type="text" name="username" id="username" class="form-control" placeholder="Username">
+        <input type="text" name="username" id="username" class="form-control" placeholder="Input your username here ..." autofocus>
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
+        <?php echo form_error('username'); ?>
       </div>
       <div class="form-group has-feedback">
-        <input type="password" name="password" id="password" class="form-control" placeholder="Password">
+        <input type="password" name="password" id="password" class="form-control" placeholder="Input your password here ...">
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+        <?php echo form_error('password'); ?>
       </div>
       <div class="row">
         <div class="col-xs-8">
         </div>
         <!-- /.col -->
         <div class="col-xs-4">
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Login</button>
+          <button type="submit" name="btn-login" id="btn-login" class="btn btn-primary btn-block btn-flat">Login</button>
         </div>
         <!-- /.col -->
       </div>

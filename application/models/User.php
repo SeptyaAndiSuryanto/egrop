@@ -9,7 +9,7 @@ class User extends CI_Model {
     
     function check_login($table, $field1, $field2){
         $this->db->select('*');
-        $this->db->from('$table');
+        $this->db->from($table);
         $this->db->where($field1);
         $this->db->where($field2);
         $this->db->limit(1);

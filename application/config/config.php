@@ -35,7 +35,7 @@ $config['base_url'] = 'http://localhost/egrop2';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -380,7 +380,7 @@ $config['encryption_key'] = 'ElectronicGresikOperasionalEGROP';
 $config['sess_driver'] = 'database';
 $config['sess_cookie_name'] = 'sessions';
 $config['sess_expiration'] = 7200;
-$config['sess_save_path'] = 'session';
+$config['sess_save_path'] = 'sessions';
 $config['sess_match_ip'] = FALSE;
 $config['sess_time_to_update'] = 300;
 $config['sess_regenerate_destroy'] = FALSE;
