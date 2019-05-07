@@ -19,17 +19,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <link rel="stylesheet" href="<?php echo base_url();?>assets/AdminLTE/dist/css/AdminLTE.min.css">
   <!-- iCheck -->
   <link rel="stylesheet" href="<?php echo base_url();?>assets/AdminLTE/plugins/iCheck/square/blue.css">
-
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
-
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
+<!-- container -->
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
@@ -39,9 +32,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <div class="login-box-body">
     <p class="login-box-msg">Sign in to start your session</p>
     <?php if(isset($error)) {echo $error; }; ?>
-    <form action="<?php echo base_url() ?>login" method="POST">
+    <?php echo $this->session->flashdata('msg1');?>
+    <form action="<?php echo base_url() ?>login/auth" method="POST">
       <div class="form-group has-feedback">
-        <input type="text" name="username" id="username" class="form-control" placeholder="Input your username here ..." autofocus>
+        <input type="text" name="username" id="username" class="form-control" placeholder="Input your username here ..." autofocus required>
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
         <?php echo form_error('username'); ?>
       </div>
@@ -81,4 +75,5 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   });
 </script>
 </body>
+<!-- .container -->
 </html>

@@ -3,13 +3,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Login extends CI_Controller {
     
-    public function __construct()
+     function __construct()
     {
         parent::__construct();
         $this->load->model('Login_model');
     }
     
-    public function index()
+     function index()
     {
         $this->load->view('Login');   
     }
@@ -29,17 +29,24 @@ class Login extends CI_Controller {
                 'username' => $username,
                 'name' => $name,
                 'nik' => $nik,
-                'role' => $role
+                'role' => $role,
+                'logged_in' => TRUE
             );
             $this->session->set_userdata( $session_data );
-            if($role === "01"){
+            if($role === '01'){
                 echo "this is admin";
             }else{
                 echo "this is user";
             }
         }else{
-            echo $this->session->set_flashdata('msg','Username or Password is Wrong');
+            echo $this->session->set_flashdata('msg1','
+            <div class="alert alert-danger">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                Username or password is incorrect.
+              </div>
+              ');
             redirect('Login','refresh');
+            // echo "asfkhbjaf";
         }
     }
 }
