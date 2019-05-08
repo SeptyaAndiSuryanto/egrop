@@ -11,7 +11,14 @@ class Login extends CI_Controller {
     
      function index()
     {
-        $this->load->view('Login');   
+        if($this->session->userdata('role') === '01'){
+            $this->load->view('1');
+        }elseif($this->session->userdata('role')==='02'){
+            $this->load->view('2');
+        }else{
+            $this->load->view('Login');
+        }
+        // $this->load->view('Login');   
     }
 
     function auth(){
@@ -34,9 +41,10 @@ class Login extends CI_Controller {
             );
             $this->session->set_userdata( $session_data );
             if($role === '01'){
-                echo "this is admin";
+                // echo "Welcome ".$session_data['username'].". You're Admin!";
+                redirect('Roles');
             }else{
-                echo "this is user";
+                echo "Welcome ".$session_data['username'];
             }
         }else{
             echo $this->session->set_flashdata('msg1','
@@ -49,6 +57,11 @@ class Login extends CI_Controller {
             // echo "asfkhbjaf";
         }
     }
+
+     function logout(){
+        $this->session->sess_destroy();
+        redirect('login');
+  }
 }
 
 /* End of file Controllername.php */
