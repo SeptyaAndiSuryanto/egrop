@@ -12,7 +12,7 @@ class Roles extends CI_Controller {
     public function index()//Admin
     {
         if($this->session->userdata('role') === '01'){
-            $this->load->view('1');
+            redirect('Dashboard');
         }else{
             redirect('login');
         }
