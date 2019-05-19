@@ -12,7 +12,7 @@ class Login extends CI_Controller {
      function index()
     {
         if($this->session->userdata('role') === '01'){
-            $this->load->view('1');
+            redirect('Dashboard');
         }elseif($this->session->userdata('role')==='02'){
             $this->load->view('2');
         }else{
