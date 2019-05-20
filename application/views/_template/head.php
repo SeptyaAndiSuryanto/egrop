@@ -29,6 +29,8 @@
   <link rel="stylesheet" href="<?php echo base_url();?>assets/AdminLTE/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="<?php echo base_url();?>assets/AdminLTE/bower_components/select2/dist/css/select2.min.css">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
   <div class="wrapper">

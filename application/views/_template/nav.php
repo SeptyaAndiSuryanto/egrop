@@ -11,17 +11,17 @@
           </a>
         </li>
         <li class="<?php if($this->uri->segment(1)=="Operational"){echo "active";}?> treeview" >
-          <a href="#">
+          <a href="">
             <i class="fa fa-gear"></i> <span>Operational</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="<?php if($this->uri->segment(2)=="KiddieAndVideo"){echo "active";}?> fa fa-child"></i> Kiddie Rides & Video Games </a></li>
-            <li><a href="#"><i class="<?php if($this->uri->segment(2)=="Redemption"){echo "active";}?> fa fa-ticket"></i> Redemption </a></li>
-            <li><a href="#"><i class="<?php if($this->uri->segment(2)=="Vending"){echo "active";}?> fa fa-building"></i> Vending </a></li>
-            <li><a href="#"><i class="<?php if($this->uri->segment(2)=="Froggy"){echo "active";}?> fa fa-life-bouy"></i> Froggy </a></li>
+            <li class="<?php if($this->uri->segment(2)=="KiddieAndVideo"){echo "active";}?>"><a href="#"><i class="fa fa-child"></i> Kiddie Rides & Video Games </a></li>
+            <li class="<?php if($this->uri->segment(2)=="redemption"){echo "active";}?>"><a href="<?=base_url('Operational/redemption')?>"><i class="fa fa-ticket"></i> Redemption </a></li>
+            <li class="<?php if($this->uri->segment(2)=="vending"){echo "active";}?> "><a href="#"><i class="fa fa-building"></i> Vending </a></li>
+            <li class="<?php if($this->uri->segment(2)=="Froggy"){echo "active";}?>"><a href="#"><i class="fa fa-life-bouy"></i> Froggy </a></li>
           </ul>
         </li>
         <!-- Machines Nav -->
@@ -33,7 +33,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-gears"></i> All Machines</a></li>
+            <li><a href="<?=base_url('Machine')?>"><i class="fa fa-gears"></i> All Machines</a></li>
             <li class="treeview">
               <a href="#"><i class=""></i> By Category
                 <span class="pull-right-container">
