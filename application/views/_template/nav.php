@@ -18,7 +18,9 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="<?php if($this->uri->segment(2)=="KiddieAndVideo"){echo "active";}?>"><a href="#"><i class="fa fa-child"></i> Kiddie Rides & Video Games </a></li>
+            <li class="<?php if($this->uri->segment(2)=="kiddie_video"){echo "active";}?>"><a href="<?=base_url('Operational/kiddierides')?>"><i class="fa fa-child"></i> Kiddie Rides</a></li>
+            <li class="<?php if($this->uri->segment(2)=="kiddie_video"){echo "active";}?>"><a href="<?=base_url('Operational/videogames')?>"><i class="fa fa-gamepad"></i> Video Games</a></li>
+            <li class="<?php if($this->uri->segment(2)=="kiddie_video"){echo "active";}?>"><a href="<?=base_url('Operational/tablegames')?>"><i class="fa fa-houzz"></i> Table Games</a></li>
             <li class="<?php if($this->uri->segment(2)=="redemption"){echo "active";}?>"><a href="<?=base_url('Operational/redemption')?>"><i class="fa fa-ticket"></i> Redemption </a></li>
             <li class="<?php if($this->uri->segment(2)=="vending"){echo "active";}?> "><a href="#"><i class="fa fa-building"></i> Vending </a></li>
             <li class="<?php if($this->uri->segment(2)=="Froggy"){echo "active";}?>"><a href="#"><i class="fa fa-life-bouy"></i> Froggy </a></li>

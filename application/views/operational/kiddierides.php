@@ -5,7 +5,7 @@
           <div class="box">
             <div class="box-header">
               <section class="content-header">
-              <h3 class="box-title"><strong>Data Operational Mesin Redemption</strong></h3>
+              <h3 class="box-title"><strong>Data Operational Kiddie Rides</strong></h3>
               <ol class="breadcrumb">
                 <li class="active"><?php echo date('l d F Y')?></li>
                 <button type="button" name="button"><a href="#" class="small-box-footer" data-toggle="modal" data-target="#modal-input">Change <i class="fa fa-arrow-circle-right"></i></a></button>
@@ -57,20 +57,6 @@
               </div>
             </div>
             <!-- /.box mesin Out of Services -->
-             <div class="col-lg-3 col-xs-6">
-              <!-- small box -->
-              <div class="small-box bg-primary">
-                <div class="inner">
-                  <h3><?php echo $count_notadded;?> Mesin</h3>
-                  <p>Out of Services</p>
-                </div>
-                <div class="icon">
-                  <i class="fa fa-wrench"></i>
-                </div>
-                <a href="#" class="small-box-footer">Lihat daftar mesin <i class="fa fa-arrow-circle-right"></i></a>
-              </div>
-            </div>
-            <!-- /.box mesin Out of Services -->
             <!-- modal input counter -->
             <div class="modal fade" id="modal-input">
               <div class="modal-dialog">
@@ -91,10 +77,6 @@
                         <div class="form-group">
                           <label for="InputSwipeCounter">Counter Swipe</label>
                           <input type="number" class="form-control" id="counter_swipe" name="counter_swipe" placeholder="Masukkan Nomor Sesuai Dengan Meteran Swipe" required/>
-                        </div>
-                        <div class="form-group">
-                          <label for="InputTicketCounter">Counter Ticket"</label>
-                          <input type="number" class="form-control" id="counter_ticket" name="counter_ticket" placeholder="Masukkan Nomor Sesuai Dengan Meteran Tiket" required/>
                         </div>
                       </div>
                       <!-- /.box-body -->
@@ -119,7 +101,7 @@
                   <th>Nama Mesin</th>
                   <!-- <th>Harga</th> -->
                   <th>Counter Swipe</th>
-                  <th>Counter Ticket</th>
+                  <th>Jenis</th>
                   <th>Oleh</th>
                 </tr>
                 </thead>
@@ -133,7 +115,7 @@
                   <td><?php echo $o->name;?></td>
                   <!-- <td><?php// echo $o->price;?></td> -->
                   <td><?php echo $o->swipe;?></td>
-                  <td><?php echo $o->ticket;?></td>
+                  <td><?=$o->type;?></td>
                   <td><?=$o->employee;?></td>
                 </tr>
                 </tbody>
@@ -144,7 +126,7 @@
                   <th>Nama Mesin</th>
                   <!-- <th>Harga</th> -->
                   <th>Counter Swipe</th>
-                  <th>Counter Ticket</th>
+                  <th>Jenis</th>
                   <th>Oleh</th>
                 </tr>
                 </tfoot>
@@ -165,7 +147,7 @@
     $('.cari').select2({
         placeholder: 'Masukan Nama Mesin...',
         ajax: {
-        url: '<?php echo base_url();?>Operational/machine_autocomplete',
+        url: '<?php echo base_url();?>Operational/kiddierides_autocomplete',
         dataType: 'json',
         delay: 250,
         processResults: function (data) {

@@ -5,7 +5,7 @@
           <div class="box">
             <div class="box-header">
               <section class="content-header">
-              <h3 class="box-title">List Mesin Gresik</h3>
+              <h3 class="box-title"><b>List Mesin Trans Studio Mini Gresik</b></h3>
               <ol class="breadcrumb">
                 <li class="active"><?php echo date('l d F Y')?></li>
               </ol>
@@ -126,6 +126,7 @@
                   <th>Harga</th>
                   <th>Status</th>
                   <th>Tanggal Ditambahkan</th>
+                  <th>Deskripsi</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -133,12 +134,13 @@
                     $no=1;
                   ?>
                 <tr>
-                  <td><?php echo $m->id ;?></td>
-                  <td><?php echo $m->name;?></td>
-                  <td><?php echo $m->type;?></td>
-                  <td><?php echo $m->price;?></td>
-                  <td><?php if($m->status==0){echo 'OFF';}else{echo 'ON';}?></td>
+                  <td><?=$m->id ;?></td>
+                  <td><?=$m->name;?></td>
+                  <td><?=$m->type;?></td>
+                  <td><?=$m->price;?></td>
+                  <td><?php if($m->status==1){echo 'ON';}else{echo 'Out of Services';}?></td>
                   <td><?php echo $m->date_added;?></td>
+                  <td><?=$m->description;?></td>
                 </tr>
                 </tbody>
               <?php }?>
@@ -150,6 +152,7 @@
                   <th>Harga</th>
                   <th>Status</th>
                   <th>Tanggal Ditambahkan</th>
+                  <th>Deskripsi</th>
                 </tr>
                 </tfoot>
               </table>

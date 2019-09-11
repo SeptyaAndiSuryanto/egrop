@@ -28,7 +28,7 @@ class Login extends CI_Controller {
         if($validate->num_rows()>0){
             $data = $validate->row_array();
             $username = $data['username'];
-            $name = $data['name'];
+            $name = $data['first_name'];
             $nik = $data['nik'];
             $role = $data['role'];
             
